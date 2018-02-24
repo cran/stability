@@ -2,21 +2,28 @@
 % Please edit documentation in R/stab_par.R
 \name{stab_par}
 \alias{stab_par}
-\alias{sta_par}
+\alias{stab_par.default}
 \title{Stability Parameters for Genotypes by Environment Interaction (GEI)}
 \usage{
-sta_par(x, rep, MSE, alpha = 0.1, Env.Cov = NULL)
+stab_par(.data, .y, .rep, .gen, .env, alpha = 0.1, .envCov = NULL)
+
+\method{stab_par}{default}(.data, .y, .rep, .gen, .env, alpha = 0.1,
+  .envCov = NULL)
 }
 \arguments{
-\item{x}{PARAM_DESCRIPTION}
+\item{.data}{data.frame}
 
-\item{rep}{No of Replicates}
+\item{.y}{Response Variable}
 
-\item{MSE}{Mean Square Error}
+\item{.rep}{Replication Factor}
+
+\item{.gen}{Genotypes Factor}
+
+\item{.env}{Environment Factor}
 
 \item{alpha}{Level of Significance, default is 0.1}
 
-\item{Env.Cov}{Environmental Covariate, default is NULL}
+\item{.envCov}{Environmental Covariate, default is NULL}
 }
 \value{
 Stability Parameters
@@ -27,16 +34,15 @@ Stability Parameters for Genotypes by Environment Interaction (GEI)
 \examples{
 
 data(ge_data)
-YieldANOVA <- add_anova(ge_data, Rep, Gen, Env, Yield)[[1]]
-Yield.ge_means <- ge_means(data = ge_data, G = Gen, E = Env, Y = Yield)
-Yield.ge_means$ge_means
-
 Yield.StabPar <-
-sta_par(
-  x     = as.matrix(Yield.ge_means$ge_means)
-, rep   = length(levels(ge_data$Rep))
-, MSE   = YieldANOVA["Residuals", "Mean Sq"]
-, alpha = 0.1
+   stab_par(
+            .data   = ge_data
+          , .y      = Yield
+          , .rep    = Rep
+          , .gen    = Gen
+          , .env    = Env
+          , alpha   = 0.1
+          , .envCov = NULL
 )
 
 Yield.StabPar

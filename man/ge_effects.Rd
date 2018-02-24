@@ -2,34 +2,45 @@
 % Please edit documentation in R/ge_effects.R
 \name{ge_effects}
 \alias{ge_effects}
+\alias{ge_effects.default}
 \title{Genotype by Environment Interaction Effects}
 \usage{
-ge_effects(data, G, E, Y)
+ge_effects(.data, .y, .gen, .env)
+
+\method{ge_effects}{default}(.data, .y, .gen, .env)
 }
 \arguments{
-\item{data}{data.frame}
+\item{.data}{data.frame}
 
-\item{G}{Genotypes Factor}
+\item{.y}{Response Variable}
 
-\item{E}{Environment Factor}
+\item{.gen}{Genotypes Factor}
 
-\item{Y}{Response Variable}
+\item{.env}{Environment Factor}
 }
 \value{
 Effects
 }
 \description{
-Provides Genotype by Environment Interaction Effects
+Calcuates Genotype by Environment Interaction Effects
 }
 \examples{
 
 data(ge_data)
-Yield.Effects <- ge_effects(data = ge_data, G = Gen, E = Env, Y = Yield)
+Yield.Effects <-
+              ge_effects(
+                .data  = ge_data
+               , .y    = Yield
+               , .gen  = Gen
+               , .env  = Env
+               )
 names(Yield.Effects)
 
 Yield.Effects$ge_means
 Yield.Effects$ge_effects
 Yield.Effects$gge_effects
+
+
 }
 \references{
 Singh, R. K. and Chaudhary, B. D. (2004) \emph{Biometrical Methods in Quantitative Genetic Analysis}.

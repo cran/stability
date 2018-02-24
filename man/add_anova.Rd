@@ -2,20 +2,23 @@
 % Please edit documentation in R/add_anova.R
 \name{add_anova}
 \alias{add_anova}
+\alias{add_anova.default}
 \title{Additive ANOVA for Genotypes by Environment Interaction (GEI) model}
 \usage{
-add_anova(data, Rep, G, E, Y)
+add_anova(.data, .y, .rep, .gen, .env)
+
+\method{add_anova}{default}(.data, .y, .rep, .gen, .env)
 }
 \arguments{
-\item{data}{data.frame}
+\item{.data}{data.frame}
 
-\item{Rep}{Replication Factor}
+\item{.y}{Response Variable}
 
-\item{G}{Genotypes Factor}
+\item{.rep}{Replication Factor}
 
-\item{E}{Environment Factor}
+\item{.gen}{Genotypes Factor}
 
-\item{Y}{Response Variable}
+\item{.env}{Environment Factor}
 }
 \value{
 Additive ANOVA
@@ -27,12 +30,12 @@ Additive ANOVA for Genotypes by Environment Interaction (GEI) model
 data(ge_data)
 YieldANOVA <-
      add_anova(
-        data = ge_data
-      , Rep  = Rep
-      , G    = Gen
-      , E    = Env
-      , Y    = Yield
-      )[[1]]
+            .data = ge_data
+          , .y    = Yield
+          , .rep  = Rep
+          , .gen  = Gen
+          , .env  = Env
+      )
 YieldANOVA
 
 }

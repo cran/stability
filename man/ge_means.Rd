@@ -2,34 +2,45 @@
 % Please edit documentation in R/ge_means.R
 \name{ge_means}
 \alias{ge_means}
+\alias{ge_means.default}
 \title{Genotype by Environment Interaction Means and Ranks}
 \usage{
-ge_means(data, G, E, Y)
+ge_means(.data, .y, .gen, .env)
+
+\method{ge_means}{default}(.data, .y, .gen, .env)
 }
 \arguments{
-\item{data}{data.frame}
+\item{.data}{data.frame}
 
-\item{G}{Genotypes Factor}
+\item{.y}{Response Variable}
 
-\item{E}{Environment Factor}
+\item{.gen}{Genotypes Factor}
 
-\item{Y}{Response Variable}
+\item{.env}{Environment Factor}
 }
 \value{
 Means and Ranks
 }
 \description{
-Provides Genotype by Environment Interaction Means along with their Ranks
+Calcuates Genotype by Environment Interaction Means along with their Ranks
 }
 \examples{
 
 data(ge_data)
 
-Yield.ge_means <- ge_means(data = ge_data, G = Gen, E = Env, Y = Yield)
+Yield.ge_means <-
+          ge_means(
+                .data  = ge_data
+               , .y    = Yield
+               , .gen  = Gen
+               , .env  = Env
+               )
 
-Yield.ge_means$ge_means1
 Yield.ge_means$ge_means
 Yield.ge_means$ge_ranks
+Yield.ge_means$g_means
+Yield.ge_means$e_means
+
 
 }
 \references{

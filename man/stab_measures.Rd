@@ -2,18 +2,21 @@
 % Please edit documentation in R/stab_measures.R
 \name{stab_measures}
 \alias{stab_measures}
+\alias{stab_measures.default}
 \title{Stability Measures for Genotypes by Environment Interaction (GEI)}
 \usage{
-stab_measures(data, G, E, Y)
+stab_measures(.data, .y, .gen, .env)
+
+\method{stab_measures}{default}(.data, .y, .gen, .env)
 }
 \arguments{
-\item{data}{data.frame}
+\item{.data}{data.frame}
 
-\item{G}{Genotypes Factor}
+\item{.y}{Response Variable}
 
-\item{E}{Environment Factor}
+\item{.gen}{Genotypes Factor}
 
-\item{Y}{Response Variable}
+\item{.env}{Environment Factor}
 }
 \value{
 Stability Measures
@@ -24,8 +27,15 @@ Stability Measures for Genotypes by Environment Interaction (GEI)
 \examples{
 
 data(ge_data)
-Yield.StabMeasures <- stab_measures(data = ge_data, G = Gen, E = Env, Y = Yield)
+Yield.StabMeasures <- stab_measures(
+                .data  = ge_data
+               , .y    = Yield
+               , .gen  = Gen
+               , .env  = Env
+               )
 Yield.StabMeasures
+
+
 
 }
 \references{
