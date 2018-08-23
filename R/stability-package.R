@@ -1,0 +1,21 @@
+#' @name stability
+#' @title Stability Analysis of Genotype by Environment Interaction (GEI)
+#' @docType package
+#' @description
+#'
+#' The \code{stability} package provides functionalities to perform
+#' Stability Analysis of Genotype by Environment Interaction (GEI)
+#' to identify superior and stable genotypes under diverse environments.
+#' It performs  Eberhart & Russel's ANOVA (1966),
+#' Finlay and Wilkinson (1963) Joint Linear Regression,
+#' Wricke (1962, 1964) Ecovalence, Shukla's stability variance parameter (1972)
+#' and  Kang's (1991) simultaneous selection for high yielding and stable parameter.
+#'
+#'
+#' @author
+#' \enumerate{
+#'          \item Muhammad Yaseen (\email{myaseen208@@gmail.com})
+#'          \item Kent M. Edkridge (\email{keskridge1@@unl.edu})
+#'          }
+#'
+NULL

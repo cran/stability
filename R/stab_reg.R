@@ -20,7 +20,11 @@ if(getRversion() >= "2.15.1"){
 #' @return Additive ANOVA
 #'
 #' @author
-#' Muhammad Yaseen (\email{myaseen208@@gmail.com})
+#' \enumerate{
+#'          \item Muhammad Yaseen (\email{myaseen208@@gmail.com})
+#'          \item Kent M. Edkridge (\email{keskridge1@@unl.edu})
+#'          }
+#'
 #'
 #' @references
 #'  Singh, R. K. and Chaudhary, B. D. (2004) \emph{Biometrical Methods in Quantitative Genetic Analysis}.
@@ -84,11 +88,13 @@ stab_reg.default <-
         dplyr::group_by(!! E) %>%
         dplyr::mutate(EnvMean = mean(GEMean))
 
+    names(DataNew) <- c("Gen", "Env", "GEMean", "EnvMean")
+
     IndvReg <- lme4::lmList(GEMean ~ EnvMean|Gen, data = DataNew)
     IndvRegFit <- summary(IndvReg)
 
     StabIndvReg <-
-      tibble::as_tibble(data.frame(
+      data.frame(
            g_means
         , "Slope" = coef(IndvRegFit)[ , , 2][ ,1]
         , "LCI"   = confint(IndvReg)[ , ,2][ ,1]
@@ -97,7 +103,24 @@ stab_reg.default <-
         , "RMSE"  = IndvRegFit$sigma
         , "SSE"   = IndvRegFit$sigma^2*IndvRegFit$df[ ,2]
         , "Delta" = IndvRegFit$sigma^2*IndvRegFit$df[ ,2]/r
-      ))
+      ) %>%
+      tibble::as_tibble()
+
+    # IndvReg <-
+    #   DataNew %>%
+    #     group_by(Gen) %>%
+    #     do(
+    #       fm1 <- lm(GEMean ~ EnvMean, data = .)
+    #     ) %>%
+    #     summarise(
+    #         Slope = coef(fm1)[2]
+    #       , LCI   = confint(fm1)[2, 1]
+    #       , UCI   = confint(fm1)[2, 2]
+    #       , R.Sqr = summary(fm1)$r.squared
+    #       , RMSE  = summary(fm1)$sigma
+    #       , SSE   = summary(fm1)$sigma^2*df.residual(fm1)
+    #       , Delta = summary(fm1)$sigma^2*df.residual(fm1)/r
+    #     )
 
     MeanSlopePlot <-
       ggplot(data = StabIndvReg, mapping = aes(x = Slope, y = Mean)) +
@@ -113,8 +136,8 @@ stab_reg.default <-
 
     return(
       list(
-          StabIndvReg   = StabIndvReg
-        , MeanSlopePlot = MeanSlopePlot
+           StabIndvReg   = StabIndvReg
+         , MeanSlopePlot = MeanSlopePlot
         ))
   }
 
