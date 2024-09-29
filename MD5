@@ -1,6 +1,6 @@
-07e8164431424427e7501fae61b634e1 *DESCRIPTION
+891951d4f23f31f741deda6afc276102 *DESCRIPTION
 4b7e41c0eab223d03684d5a7192329d7 *NAMESPACE
-04c2ac018f0e416f54faaa48a22af4e9 *NEWS.md
+ad7845446cdcb1a25805f2388b01c62a *NEWS.md
 ec54815a57cd77184f3f302778f6aafa *R/add_anova.R
 c56d68e5e83a6d7c5caef1e986e5347c *R/ammi.R
 dc317e51ec9bcef02ebd6f6aeac3e706 *R/ammi_biplot.R
@@ -9,7 +9,7 @@ dc317e51ec9bcef02ebd6f6aeac3e706 *R/ammi_biplot.R
 e29838d3a2405f969b9c7c8b9ede3989 *R/ge_effects.R
 c096f3c57a829a4b98d2cc39c94e3376 *R/ge_means.R
 fdcfd13a84adefdaa732b6109ee09b92 *R/gge_biplot.R
-02125319aac9dfbdf4dbc1bc9336189f *R/indiv_anova.R
+b0b0482ea795f9d028fbbe863f7785ef *R/indiv_anova.R
 ccbe3f10393fa965208e1bd44a2d6081 *R/stab_asv.R
 d15d1c7d4b06fa9d424c669c5075a44f *R/stab_dist.R
 fc35480433427054afbd5eaff6065c5c *R/stab_fox.R
@@ -18,14 +18,15 @@ fc35480433427054afbd5eaff6065c5c *R/stab_fox.R
 6318954e2a41f8292ae63c8b91411535 *R/stab_measures.R
 3707874a704d1f18a51afe4544065f2f *R/stab_par.R
 c62bffd9f8873860cd8734ee106eda90 *R/stab_reg.R
-71251a1501e80f694d57a5ee3477af95 *R/stability-package.R
-caf5a54e2fe4f318b0571b3613cc28b3 *README.md
+4d0db4bc4d151044fd318303c80c39a8 *R/stability-package.R
+a44341678758d9d5848e88de2149aefe *README.md
 4e6121d878c01f816f073f44c7f6c777 *data/ge_data.RData
+128b497886d5ae720e26c6545268a031 *inst/CITATION
 6445aa6a6cb82582da7ef0b521e7f45a *man/add_anova.Rd
 bfdf8d8c8cca66a68afb966a63cd720f *man/ammi.Rd
 9fc7c940f2c0d66f68233bd41c6317b9 *man/ammi_biplot.Rd
 6128ed09038006fac4e03db87eb77c25 *man/er_anova.Rd
-2c0320aaa29cb0d7e04f3cd24e5364ec *man/ge_data.Rd
+e409158e9f154d2140f9aef53779113f *man/ge_data.Rd
 ea28d53582b8b210f132caf54af96cc2 *man/ge_effects.Rd
 da4a8a95ec6600cf1a7ca3462920f3cc *man/ge_means.Rd
 35cafceb17a51b886094901980b2e991 *man/gge_biplot.Rd
@@ -36,6 +37,6 @@ a1a68c84554841d4dd01313a5256a155 *man/stab_asv.Rd
 82a34f868ab4be269a478e2db8b628c9 *man/stab_kang.Rd
 b21c891dcacd865cabfea64e4a49c9c3 *man/stab_masv.Rd
 f8593879fb720566209b1a644380fa7a *man/stab_measures.Rd
-ca943a6ba4d01f68be20654befa01dfc *man/stab_par.Rd
+768072fe85937555c0ffefacfffd4908 *man/stab_par.Rd
 5027b3c9170ae1011a6a4f36fc13885c *man/stab_reg.Rd
-a7ec7f4a4fcfde0e1b5b1f9121688638 *man/stability.Rd
+fb4eac97282fc7a5516aa4f2f1e1faeb *man/stability.Rd

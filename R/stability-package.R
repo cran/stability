@@ -1,6 +1,5 @@
 #' @name stability
 #' @title Stability Analysis of Genotype by Environment Interaction (GEI)
-#' @docType package
 #' @description
 #'
 #' The \code{stability} package provides functionalities to perform
